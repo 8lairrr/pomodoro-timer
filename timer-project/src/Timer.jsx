@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 
-function Timer( { workDuration = 25 * 60 * 1000, breakDuration = 5 * 60 * 1000 }) { //default props are 25 and 5 mins
+function Timer( { workDuration = 25 * 60 * 1000, breakDuration = 5 * 60 * 1000, onHome}) { //default props are 25 and 5 mins
 
     const [isRunning, setIsRunning] = useState(false); //timer is not currently running
     const [isBreak, setIsBreak] = useState(false); //currently in "work mode"
@@ -57,10 +57,15 @@ function Timer( { workDuration = 25 * 60 * 1000, breakDuration = 5 * 60 * 1000 }
     return (
         <div className='timer'>
             <div className='time-display'>{formatTime()}</div>
-            {/* mode display for temporary purposes */}
-            <div className="mode-label">{isBreak ? "Break Time!" : "Work Time!"}</div>
+            <div className="mode-label">
+                <p className={isBreak ? "mode-break" : "mode-work"}>Work</p>
+                <p className={isBreak ? "mode-work" : "mode-break"}>Break</p>
+            </div>
             <button onClick={() => setIsRunning(prev => !prev)}>
                 {isRunning ? 'pause' : 'start'}
+            </button>
+            <button onClick={onHome}>
+                back to home
             </button>
         </div>
 

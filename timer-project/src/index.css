@@ -1,0 +1,19 @@
+.mode-work {
+    color: white;
+    background-color: blue;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .mode-break {
+    color: blue;
+    border: 2px solid blue;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: transparent;
+  }
+  
