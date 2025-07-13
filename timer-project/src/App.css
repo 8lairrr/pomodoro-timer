@@ -1,0 +1,105 @@
+/* landing page CSS */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Commissioner:wght@100..900&family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+
+.bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.commissioner-regular {
+  font-family: "Commissioner", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "FLAR" 0,
+    "VOLM" 0;
+}
+
+.epilogue-medium {
+  font-family: "Epilogue", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 30px;
+  font-family: "Epilogue", sans-serif;
+  color: #B4D6F4;
+  box-sizing: border-box;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #303D4F;
+  border-radius: 50px;
+  padding: 30px;
+  margin-top: 50px;
+  width: 447px; /* same size as timer */
+  height: 309px; /* same size as timer */
+  box-sizing: border-box;
+}
+
+.landing h1 {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  color: #D4ECD4;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.landing h2 {
+  font-family: "Commissioner", sans-serif;
+  font-weight: 200;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #D4ECD4;
+  text-align: center;
+}
+
+.landing .time-options {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.landing .time-options button {
+  flex: none;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-family: "Epilogue", sans-serif;
+  font-weight: 600;
+  padding: 15px;
+  color: #B4D6F4;
+  background-color: transparent;
+  border: 2px solid #B4D6F4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: normal;
+  box-sizing: border-box;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.landing .time-options button:hover {
+  background-color: #B4D6F4;
+  color: #2B503E;
+}

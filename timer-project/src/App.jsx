@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Timer from './Timer'
+import './App.css'
 
 function App() {
   const [selectedDurations, setSelectedDurations] = useState(null);
@@ -32,15 +33,17 @@ function App() {
         <div className="landing">
           <h1>GOOD <span className='time-greeting'>{getTimeGreeting()}</span>.</h1>
           <h2>choose a pomodoro setting:</h2>
-          <button onClick={() => handleSelectMode(25 * 60 * 1000, 5 * 60 * 1000)}>
-            SHORT STUDY
-          </button>
-          <button onClick={() => handleSelectMode(45 * 60 * 1000, 15 * 60 * 1000)}>
-            FINISH WORK
-          </button>
-          <button onClick={() => handleSelectMode(52 * 60 * 1000, 17 * 60 * 1000)}>
-            DEEP FOCUS
-          </button>
+          <div className='time-options'>
+            <button onClick={() => handleSelectMode(25 * 60 * 1000, 5 * 60 * 1000)}>
+              SHORT STUDY
+            </button>
+            <button onClick={() => handleSelectMode(45 * 60 * 1000, 15 * 60 * 1000)}>
+              FINISH WORK
+            </button>
+            <button onClick={() => handleSelectMode(52 * 60 * 1000, 17 * 60 * 1000)}>
+              DEEP FOCUS
+            </button>
+          </div>
           </div>
       )}
     </div>
