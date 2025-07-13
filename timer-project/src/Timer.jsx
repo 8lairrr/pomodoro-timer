@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
+import './Timer.css'
 
 function Timer( { workDuration = 25 * 60 * 1000, breakDuration = 5 * 60 * 1000, onHome}) { //default props are 25 and 5 mins
 
@@ -56,17 +57,19 @@ function Timer( { workDuration = 25 * 60 * 1000, breakDuration = 5 * 60 * 1000, 
 
     return (
         <div className='timer'>
-            <div className='time-display'>{formatTime()}</div>
             <div className="mode-label">
-                <p className={isBreak ? "mode-break" : "mode-work"}>Work</p>
-                <p className={isBreak ? "mode-work" : "mode-break"}>Break</p>
+                <p className={isBreak ? "mode-break" : "mode-work"}>WORK</p>
+                <p className={isBreak ? "mode-work" : "mode-break"}>BREAK</p>
             </div>
-            <button onClick={() => setIsRunning(prev => !prev)}>
-                {isRunning ? 'pause' : 'start'}
-            </button>
-            <button onClick={onHome}>
-                back to home
-            </button>
+            <div className='time-display'>{formatTime()}</div>
+            <div className='controls'>
+                <button onClick={() => setIsRunning(prev => !prev)}>
+                    {isRunning ? 'pause timer' : 'start timer'}
+                </button>
+                <button onClick={onHome}>
+                    back to home
+                </button>
+            </div>
         </div>
 
     );

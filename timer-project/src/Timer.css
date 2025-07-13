@@ -1,0 +1,97 @@
+/* timer CSS */
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+.figtree-regular {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+.epilogue-medium {
+  font-family: "Epilogue", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightcyan;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "Epilogue", sans-serif;
+  }
+  
+  .timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #303D4F;
+    padding: 30px;
+    margin-top: 50px;
+  }
+  
+  .time-display {
+    display: flex;
+    justify-content: center;
+    font-size: 7.5rem;
+    font-family: "Figtree", sans-serif;
+    font-weight: 600;
+    color: #D4ECD4;
+    margin-bottom: 5px;
+    min-width: 5ch;
+  }
+  
+  .mode-label {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mode-work {
+    font-size: 1rem;
+    color: #303D4F;
+    background-color: #B4D6F4;
+    padding: 5px 25px;
+    padding-top: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .mode-break {
+    font-size: 1rem;
+    color: #B4D6F4;
+    border: 2px solid #B4D6F4;
+    padding: 5px 25px;
+    padding-top: 8px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: transparent;
+  }
+  
+  .timer button {
+    font-size: 0.9rem;
+    font-family: "Epilogue", sans-serif;
+    font-weight: bold;
+    padding: 5px 10px;
+    padding-top: 5px;
+    margin: 5px;
+    min-width: 125px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #B4D6F4;
+    background-color: transparent;
+    transition: background-color 0.5s ease;
+  }
+  
+  .timer button:hover {
+    background-color: hsla(208, 76%, 95%, 0.425);
+  }
+
