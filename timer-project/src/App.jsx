@@ -44,6 +44,9 @@ function App() {
               DEEP FOCUS
             </button>
           </div>
+          <button className='exit-button'>
+              exit
+          </button>
           </div>
       )}
     </div>
