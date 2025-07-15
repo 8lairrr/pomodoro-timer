@@ -19,6 +19,13 @@ function App() {
     return "NIGHT";
   }
 
+  const handleExit = () => {
+    if (window.electronAPI) {
+      window.electronAPI.closeWindow();
+    }
+  };
+
+
   return (
     <div className='app'>
       {selectedDurations ? (
@@ -44,7 +51,7 @@ function App() {
               DEEP FOCUS
             </button>
           </div>
-          <button className='exit-button'>
+          <button className='exit-button' onClick={handleExit}>
               exit
           </button>
           </div>

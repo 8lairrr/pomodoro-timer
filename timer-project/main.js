@@ -1,5 +1,4 @@
-// main.js (ES module style)
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -7,25 +6,40 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+let win;
+
 function createWindow() {
-  const win = new BrowserWindow({
-    width: 400,
-    height: 500,
-    frame: false,
-    alwaysOnTop: true,
+  const preloadPath = path.join(__dirname, 'preload.cjs');
+
+  win = new BrowserWindow({
+    width: 447,
+    height: 340,
+    frame: true,
+    alwaysOnTop: false,
     transparent: true,
+    resizable: false,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
+      preload: preloadPath
     }
   });
 
-  win.loadURL('http://localhost:3000');
+  win.loadURL('http://localhost:5173');
   // For production, you can do:
   // win.loadFile(path.join(__dirname, 'build', 'index.html'));
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+  createWindow();
+});
+
+//listener for close request
+ipcMain.on('close-window', () => {
+  if (win) {
+    win.close();
+  }
+});
 
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) createWindow();

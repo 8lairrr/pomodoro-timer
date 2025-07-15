@@ -25,16 +25,21 @@
   font-style: normal;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
   margin: 0;
-  padding: 30px;
   font-family: "Epilogue", sans-serif;
   color: #B4D6F4;
-  box-sizing: border-box;
+  background-color: transparent;
 }
 
 .landing {
@@ -44,7 +49,6 @@
   background-color: #303D4F;
   border-radius: 50px;
   padding: 30px;
-  margin-top: 50px;
   width: 447px; /* same size as timer */
   height: 309px; /* same size as timer */
   box-sizing: border-box;

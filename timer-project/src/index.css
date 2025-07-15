@@ -1,0 +1,22 @@
+/* root div fills the window and has a background */
+#root {
+    height: 309px;
+    width: 447px;
+    margin: 0;
+    padding: 0;
+}
+  
+/* hide scrollbars for the whole body & html */
+html, body {
+    overflow: hidden;
+}
+  
+/* in case some inner element tries to scroll */
+* {
+scrollbar-width: none; /* Firefox */
+}
+
+/* for chrome, edge, + safari: */
+*::-webkit-scrollbar {
+display: none;
+}
