@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import './Timer.css'
+import timerEndSound from './assets/timer-end.mp3'
 
 function Timer( { workDuration = 25 * 60 * 1000, breakDuration = 5 * 60 * 1000, onHome}) { //default props are 25 and 5 mins
 
@@ -22,6 +23,11 @@ function Timer( { workDuration = 25 * 60 * 1000, breakDuration = 5 * 60 * 1000, 
 
             //handle when timer runs out
             if (newTimeLeft <= 0) {
+                //play timer end sound
+                const audio = new Audio(timerEndSound);
+                audio.volume = 0.5; // so the sound isnt too abrasive
+                audio.play();
+
                 //switch mode
                 setIsBreak(prevIsBreak => {
                     const nextIsBreak = !prevIsBreak;
